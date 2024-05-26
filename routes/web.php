@@ -37,8 +37,10 @@ Route::middleware('auth', 'verified')->group(function () {
     // Route::get('/post/{post}',[PostController::class, 'show'])->name('post.show');
     // Route::delete('/post/{post}',[PostController::class, 'destroy'])->name('post.destroy');
     Route::resource('post', PostController::class);
+    Route::get('/allposts', [PostController::class, 'allposts'])->name('post.allposts');
     Route::get('/posts', [PostController::class, 'posts'])->name('pages.posts');
-    // Route::get('/', [PostController::class, 'postIndex'])->name('post.postIndex');
+    // Route::get('/', [PostController::class, 'postIndex'])->name('post.postIndex'); 
+    
 });
 
 require __DIR__.'/auth.php';
